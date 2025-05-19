@@ -1,0 +1,821 @@
+.rootDiv {
+  background-color: black;
+  padding-bottom: 3rem;
+  
+  // Common button styles
+  button {
+    width: auto;
+    min-width: 150px;
+    padding: 0.8rem 1.5rem;
+    font-weight: 700;
+    border-radius: 30px;
+    background: transparent;
+    transition: all 0.3s ease;
+  }
+
+  // Container styles for consistent spacing
+  %container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+  }
+
+  .header {
+    margin-top: 3%;
+    border-bottom: 0.3px solid rgb(96, 96, 96);
+    
+    .headerContainer {
+      @extend %container;
+      margin-bottom: 1%;
+      
+      .content {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 2rem;
+        
+        img {
+          width: 100%;
+          max-width: 450px;
+        }
+        
+        .texts {
+          flex: 1;
+          min-width: 280px;
+          
+          .text {
+            font-size: clamp(1.5rem, 4vw, 2.2rem);
+            font-weight: 500;
+            color: white;
+            margin-bottom: 1.5rem;
+          }
+          
+          button {
+            border: 1px solid white;
+            color: white;
+            margin-bottom: 1.5rem;
+            
+            &:hover {
+              background: rgb(184, 255, 4);
+              color: black;
+              border: none;
+            }
+          }
+          
+          .text2 {
+            font-size: 1rem;
+            color: gray;
+          }
+          
+          span {
+            color: rgb(184, 255, 4);
+            text-decoration: underline;
+          }
+        }
+      }
+      
+      .description {
+        color: rgb(184, 255, 4);
+        font-weight: 600;
+        font-size: clamp(1.2rem, 3vw, 1.7rem);
+        text-align: center;
+        margin: 1.5rem 0;
+      }
+    }
+  }
+
+  .intro {
+    .content {
+      @extend %container;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 2rem;
+      margin: 5% auto;
+      
+      img {
+        width: 100%;
+        max-width: 500px;
+      }
+      
+      .texts {
+        flex: 1;
+        min-width: 280px;
+        
+        .label {
+          color: rgb(184, 255, 4);
+          font-size: clamp(1rem, 2vw, 1.2rem);
+          font-weight: 700;
+          margin-bottom: 1rem;
+        }
+        
+        .text {
+          font-size: clamp(0.9rem, 1.5vw, 1.1rem);
+          color: rgb(161, 161, 161);
+          margin-bottom: 2rem;
+          line-height: 1.6;
+        }
+        
+        button {
+          border: 1px solid white;
+          color: white;
+          
+          &:hover {
+            background: rgb(184, 255, 4);
+            color: black;
+            border: none;
+          }
+        }
+      }
+    }
+  }
+
+  .cardComponent {
+    @extend %container;
+    margin: 4rem auto;
+    
+    .cardHeader {
+      color: rgb(184, 255, 4);
+      font-size: clamp(1.5rem, 3vw, 2.2rem);
+      font-weight: 700;
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+    
+    .cards {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2rem;
+      
+      .cardItem {
+        flex: 1;
+        min-width: 250px;
+        max-width: 350px;
+        margin: 1rem 0;
+        border-radius: 20px;
+        background-color: rgb(37, 37, 37);
+        padding: 1.5rem;
+        
+        img {
+          width: 80px;
+          height: auto;
+        }
+        
+        .label {
+          color: white;
+          font-size: 1.3rem;
+          font-weight: 800;
+          margin: 1rem 0;
+        }
+        
+        .text {
+          color: rgb(169, 169, 169);
+          font-size: 1rem;
+          font-weight: 500;
+          margin-bottom: 1rem;
+          line-height: 1.5;
+        }
+      }
+    }
+  }
+
+  .cardComponent2 {
+    @extend .cardComponent;
+    
+    .cards {
+      .cardItem {
+        min-width: 220px;
+        max-width: 300px;
+      }
+    }
+  }
+
+  .banner {
+    @extend %container;
+    padding: 3rem;
+    border-radius: 24px;
+    background-color: rgb(184, 255, 4);
+    color: black;
+    margin: 4rem auto;
+    
+    .bannerHeader {
+      font-size: clamp(1.8rem, 5vw, 3rem);
+      font-weight: 700;
+      text-align: center;
+      margin-bottom: 1.5rem;
+    }
+    
+    .bannerText {
+      font-size: clamp(1rem, 2vw, 1.2rem);
+      font-weight: 500;
+      line-height: 1.6;
+    }
+  }
+
+  .banner2 {
+    @extend .banner;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 2rem;
+    
+    .bannerContainer {
+      flex: 2;
+      min-width: 280px;
+      
+      .bannerHeader {
+        text-align: left;
+        font-weight: 800;
+      }
+    }
+    
+    .bannerButton {
+      flex: 1;
+      min-width: 200px;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      
+      button {
+        cursor: pointer;
+        color: rgb(184, 255, 4);
+        background-color: black;
+        
+        &:hover {
+          background-color: white;
+          color: black;
+        }
+      }
+    }
+  }
+
+  .followContainer {
+    @extend %container;
+    margin: 4rem auto;
+    
+    .first {
+      display: flex;
+      flex-direction: column;
+      
+      button {
+        border-radius: 5px;
+        background: rgb(81, 113, 211);
+        color: white;
+        align-self: flex-start;
+        
+        &:hover {
+          background: rgba(81, 113, 211, 0.92);
+        }
+      }
+      
+      .firstLabel {
+        color: rgb(184, 255, 4);
+        font-size: clamp(1.8rem, 4vw, 2.8rem);
+        font-weight: 800;
+        margin-bottom: 1rem;
+      }
+      
+      .firstText {
+        margin-bottom: 2rem;
+        font-size: clamp(1rem, 1.5vw, 1.2rem);
+        font-weight: 500;
+        line-height: 1.6;
+        color: rgb(143, 143, 143);
+      }
+      
+      .firstIcons {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        gap: 2rem;
+        margin: 2rem 0;
+        
+        .icon {
+          font-size: clamp(2rem, 4vw, 3rem);
+          color: rgb(184, 255, 4);
+        }
+      }
+    }
+  }
+
+  .formContainer {
+    @extend %container;
+    padding: 3rem;
+    border-radius: 24px;
+    background-color: rgb(184, 255, 4);
+    color: black;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    margin: 4rem auto;
+    
+    .form {
+      flex: 3;
+      min-width: 280px;
+      
+      .formHeader {
+        font-size: clamp(1.8rem, 4vw, 2.8rem);
+        margin-bottom: 1rem;
+      }
+      
+      form {
+        margin: 1.5rem 0;
+        
+        label {
+          font-weight: 500;
+          display: block;
+          margin-bottom: 0.5rem;
+        }
+        
+        input,
+        textarea {
+          width: 100%;
+          margin-bottom: 1rem;
+          background-color: white;
+          border-radius: 8px;
+          border: 1px solid transparent;
+          padding: 0.8rem;
+          
+          &:hover, &:focus {
+            box-shadow: 0px 0px 3px 1px rgb(56, 137, 230) !important;
+            outline: none;
+          }
+        }
+        
+        input {
+          height: 3rem;
+        }
+        
+        textarea {
+          height: 12rem;
+          resize: vertical;
+        }
+        
+        button {
+          width: auto;
+          min-width: 150px;
+          height: auto;
+          padding: 0.8rem 1.5rem;
+          border-radius: 12px;
+          background-color: rgb(58, 82, 221);
+          color: white;
+          
+          &:hover {
+            background-color: black;
+          }
+        }
+        
+        p {
+          line-height: 1.6;
+          font-weight: 500;
+          font-size: clamp(1rem, 1.5vw, 1.2rem);
+          margin-top: 1rem;
+        }
+      }
+    }
+    
+    .formButton {
+      flex: 1;
+      min-width: 200px;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      
+      button {
+        cursor: pointer;
+        color: rgb(184, 255, 4);
+        background-color: black;
+        
+        &:hover {
+          background-color: white;
+          color: black;
+        }
+      }
+    }
+  }
+
+  .bottomContainer {
+    @extend %container;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+    margin: 4rem auto;
+    
+    .bottomTexts {
+      flex: 1;
+      min-width: 280px;
+      display: flex;
+      flex-direction: column;
+      
+      .bottomHeader {
+        color: white;
+        font-size: clamp(1.3rem, 2.5vw, 2rem);
+        margin-bottom: 1rem;
+      }
+      
+      .bottomText {
+        line-height: 1.6;
+        color: rgb(169, 167, 167);
+        font-size: clamp(0.9rem, 1.5vw, 1.1rem);
+        font-weight: 500;
+      }
+    }
+    
+    img {
+      flex: 1;
+      max-width: 500px;
+      width: 100%;
+      height: auto;
+      border-radius: 50%;
+      -webkit-mask-image: radial-gradient(
+        circle at center,
+        rgba(255, 255, 255, 1) 0%,
+        rgba(255, 255, 255, 1) 50%,
+        rgba(255, 255, 255, 0) 80%
+      );
+      mask-image: radial-gradient(
+        circle at center,
+        rgba(255, 255, 255, 1) 0%,
+        rgba(255, 255, 255, 1) 50%,
+        rgba(255, 255, 255, 0) 80%
+      );
+    }
+  }
+
+  .footer {
+    @extend %container;
+    color: white;
+    margin: 4rem auto 1rem;
+    
+    div {
+      margin-top: 2rem;
+      
+      p {
+        margin-top: 1rem;
+        font-size: clamp(1rem, 1.5vw, 1.3rem);
+      }
+      
+      .headers {
+        font-size: clamp(1.2rem, 2vw, 1.5rem);
+        font-weight: 700;
+        border-left: 4px solid rgb(25, 62, 212);
+        padding-left: 2%;
+      }
+      
+      .smallText {
+        font-size: 1.1rem;
+      }
+      
+      .inputContainer {
+        display: flex;
+        flex-wrap: wrap;
+        background-color: white;
+        border-radius: 10px;
+        margin-top: 1rem;
+        overflow: hidden;
+        
+        input {
+          flex: 2;
+          min-width: 200px;
+          padding: 0.8rem;
+          outline: none;
+          color: black;
+          border: none;
+          box-shadow: none;
+          font-weight: 600;
+        }
+        
+        button {
+          flex: 1;
+          min-width: 150px;
+          border-radius: 0;
+          padding: 0.8rem;
+          font-weight: 600;
+          background-color: rgb(73, 70, 198);
+          color: white;
+          
+          @media (min-width: 768px) {
+            border-radius: 0 10px 10px 0;
+          }
+        }
+      }
+    }
+    
+    .last {
+      margin-top: 3rem;
+      text-align: center;
+      
+      p {
+        text-align: center;
+      }
+      
+      .copy {
+        color: rgb(176, 176, 176);
+        font-size: 1.1rem;
+        margin-top: 0.5rem;
+      }
+    }
+  }
+}
+
+// Variables for consistent styling
+$primary-color: #b8ff04; // Bright lime green
+$background-color: black;
+$text-color: white;
+$text-secondary: rgba(255, 255, 255, 0.8);
+$box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+$border-radius: 8px;
+$spacing-unit: 1rem;
+
+// Mixins for responsive design
+@mixin respond-to($breakpoint) {
+  @if $breakpoint == "small" {
+    @media (max-width: 576px) { @content; }
+  } @else if $breakpoint == "medium" {
+    @media (max-width: 768px) { @content; }
+  } @else if $breakpoint == "large" {
+    @media (max-width: 992px) { @content; }
+  }
+}
+
+.contactForm {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: $spacing-unit * 3;
+  background-color: $background-color;
+  
+  @include respond-to("medium") {
+    padding: $spacing-unit * 2;
+  }
+  
+  @include respond-to("small") {
+    padding: $spacing-unit;
+  }
+  
+  .heading {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: $primary-color;
+    margin-bottom: $spacing-unit * 2;
+    text-align: center;
+    letter-spacing: 1px;
+    
+    @include respond-to("small") {
+      font-size: 2rem;
+      margin-bottom: $spacing-unit;
+    }
+  }
+  
+  .formBox {
+    background-color: rgba(255, 255, 255, 0.05);
+    border-radius: $border-radius;
+    border: 1px solid rgba($primary-color, 0.3);
+    padding: $spacing-unit * 2;
+    
+    @include respond-to("small") {
+      padding: $spacing-unit;
+    }
+    
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: $spacing-unit * 1.5;
+      
+      input, textarea {
+        width: 100%;
+        padding: $spacing-unit;
+        background-color: rgba(0, 0, 0, 0.7);
+        border: 1px solid rgba($primary-color, 0.4);
+        border-radius: $border-radius;
+        font-size: 1rem;
+        color: $text-color;
+        transition: all 0.3s ease;
+        
+        &:focus {
+          outline: none;
+          border-color: $primary-color;
+          box-shadow: 0 0 0 2px rgba($primary-color, 0.2);
+        }
+        
+        &::placeholder {
+          color: rgba(255, 255, 255, 0.5);
+        }
+      }
+      
+      textarea {
+        min-height: 150px;
+        resize: vertical;
+        
+        @include respond-to("small") {
+          min-height: 120px;
+        }
+      }
+      
+      button {
+        background-color: $primary-color;
+        color: $background-color;
+        border: none;
+        border-radius: $border-radius;
+        padding: $spacing-unit $spacing-unit * 2;
+        font-size: 1rem;
+        font-weight: 700;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        margin-top: $spacing-unit;
+        align-self: flex-start;
+        min-width: 120px;
+        
+        &:hover {
+          background-color: darken($primary-color, 10%);
+          transform: translateY(-2px);
+        }
+        
+        &:active {
+          transform: translateY(0);
+        }
+        
+        @include respond-to("small") {
+          align-self: center;
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+
+.bannerBtn {
+  background-color: #b8ff04;
+  color: black;
+  font-weight: bold;
+  margin-top: 20px;
+  padding: 12px 24px;
+  border: 2px black solid;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  
+  &:hover {
+    background-color: black;
+    color: #b8ff04;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(184, 255, 4, 0.4);
+  }
+  
+  &:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 4px rgba(184, 255, 4, 0.2);
+  }
+  
+  &:focus {
+    outline: 2px solid black;
+    outline-offset: 2px;
+  }
+}
+
+.bottomImage {
+  width: 100%;
+  margin: $spacing-unit * 4 0;
+  padding: 0 $spacing-unit;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  
+  img {
+    max-width: 100%;
+    height: auto;
+    border-radius: $border-radius;
+    box-shadow: $box-shadow;
+    border: 1px solid rgba($primary-color, 0.3);
+    object-fit: cover;
+    object-position: center;
+    transition: transform 0.3s ease;
+    
+    // Add lime green glow on the image
+    filter: drop-shadow(0 0 8px rgba($primary-color, 0.4));
+    
+    // Aspect ratio container for consistent image sizing
+    @media (min-width: 768px) {
+      max-height: 450px;
+      width: auto;
+    }
+    
+    @include respond-to("medium") {
+      width: 90%;
+    }
+    
+    @include respond-to("small") {
+      width: 100%;
+    }
+    
+    &:hover {
+      transform: scale(1.02);
+    }
+  }
+}
+
+.footer {
+  width: 100%;
+  padding: $spacing-unit * 3 0;
+  background-color: $background-color;
+  
+  .socials {
+    display: flex;
+    justify-content: center;
+    gap: $spacing-unit * 2;
+    
+    svg {
+      font-size: 2rem;
+      color: $primary-color;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      
+      &:hover {
+        color: lighten($primary-color, 5%);
+        transform: translateY(-5px);
+        filter: drop-shadow(0 0 5px rgba($primary-color, 0.7));
+      }
+      
+      @include respond-to("small") {
+        font-size: 1.8rem;
+      }
+    }
+    
+    @include respond-to("small") {
+      gap: $spacing-unit * 1.5;
+    }
+  }
+}
+
+// Animation for form elements
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.contactForm .formBox form {
+  > * {
+    animation: fadeIn 0.4s ease forwards;
+    
+    @for $i from 1 through 4 {
+      &:nth-child(#{$i}) {
+        animation-delay: 0.1s * $i;
+      }
+    }
+  }
+}
+
+// High contrast focus styles for accessibility
+:focus {
+  outline: 2px solid $primary-color;
+  outline-offset: 2px;
+}
+
+// Media queries for responsive adjustments
+@media (max-width: 768px) {
+  .rootDiv {
+    .header .headerContainer .content,
+    .intro .content,
+    .banner2,
+    .formContainer,
+    .bottomContainer {
+      flex-direction: column;
+    }
+    
+    .banner2 .bannerButton,
+    .formContainer .formButton {
+      justify-content: center;
+      margin-top: 1.5rem;
+    }
+    
+    .intro .content img {
+      order: -1;
+    }
+    
+    button {
+      width: 100%;
+      max-width: 300px;
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .rootDiv {
+    .cardComponent .cards .cardItem,
+    .cardComponent2 .cards .cardItem {
+      min-width: 100%;
+    }
+    
+    .formContainer {
+      padding: 2rem 1.5rem;
+    }
+    
+  }
+}
